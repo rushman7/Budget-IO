@@ -1,13 +1,13 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class Edit extends Component {
-  render() {
-    return (
-      <div>
-        <h2>Edit Page</h2>
-      </div>
-    )
-  }
+const Edit = (props) => {
+  console.log(props);
+  return (
+    <div>
+      <h2>Edit Page, ID: {props.match.params.id}</h2>
+    </div>
+  )
 }
+
 
 export default Edit;
