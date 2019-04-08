@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
+import ExpenseList from './ExpenseList';
 
 class Home extends Component {
   render() {
     return (
       <div>
-        <h2 >Welcome to Budget IO</h2>
+        <ExpenseList />
       </div>
     )
   }

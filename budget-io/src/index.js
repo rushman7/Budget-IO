@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
 import { BrowserRouter as Router } from "react-router-dom";
 import storeSetup from './store/storeSetup';
 import { addExpense } from './actions/expenses';
@@ -21,10 +22,12 @@ const state = store.getState();
 const visibleExpenses = getVisibleExpenses(state.expenses, state.filters);
 console.log(visibleExpenses);
 
+const app = (
+  <Provider store={store}>
+    <Router>
+      <App /> 
+    </Router>
+  </Provider>
+)
 
-ReactDOM.render(
-  <Router>
-    <App /> 
-  </Router>,
-  document.getElementById('root')
-);
+ReactDOM.render(app, document.getElementById('root'));
