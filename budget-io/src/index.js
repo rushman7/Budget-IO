@@ -13,9 +13,9 @@ import './index.css';
 
 const store = storeSetup();
 
-store.dispatch(addExpense({ description: 'Water Bill' })); 
+store.dispatch(addExpense({ description: 'Water Bill', amount: 4500 })); 
 store.dispatch(addExpense({ description: 'Gas Bill' }));
-store.dispatch(setTextFilter('water'));
+// store.dispatch(setTextFilter('water'));
 
 
 const state = store.getState();
