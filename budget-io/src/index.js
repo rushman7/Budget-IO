@@ -13,8 +13,8 @@ import './index.css';
 const store = storeSetup();
 
 store.dispatch(addExpense({ description: 'Water Bill', amount: 4500 })); 
-store.dispatch(addExpense({ description: 'Gas Bill' , amount: 3000}));
-store.dispatch(addExpense({ description: 'Rent' , amount: 300000}));
+store.dispatch(addExpense({ description: 'Gas Bill' , amount: 3000, createdAt: 1000 }));
+store.dispatch(addExpense({ description: 'Rent' , amount: 100000}));
 
 
 const state = store.getState();
