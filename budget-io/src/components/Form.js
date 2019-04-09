@@ -5,18 +5,26 @@ class Form extends React.Component {
     super()
     this.state = {
       description: '',
-      note: ''
+      note: '',
+      amount: ''
     }
   }
 
   onDescriptionChange = (e) => {
-    const description = e.target.value;
-    this.setState(() => ({ description }));
+    e.persist();
+    this.setState(() => ({ description: e.target.value }));
   }
 
   onNoteChange = (e) => {
-    const note = e.target.value;
-    this.setState(() => ({ note }));
+    e.persist();
+    this.setState(() => ({ note: e.target.value }));
+  }
+
+  onAmountChange = (e) => {
+    e.persist();
+    if (e.target.value.match(/^\d*(\.\d{0,2})?$/)) {
+      this.setState(() => ({ amount: e.target.value }))
+    }
   }
 
   render() {
@@ -31,8 +39,10 @@ class Form extends React.Component {
             onChange={this.onDescriptionChange}
           />
           <input 
-            type="number"
+            type="text"
             placeholder="Amount"
+            value={this.state.amount}
+            onChange={this.onAmountChange}
           />
           <textarea
             placeholder="Add a note for your expense.(optional)"
