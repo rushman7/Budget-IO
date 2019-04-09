@@ -1,7 +1,8 @@
-import 'react-dates/initialize';
 import React from 'react';
 import moment from 'moment';
 import { SingleDatePicker } from 'react-dates';
+
+import 'react-dates/initialize';
 import 'react-dates/lib/css/_datepicker.css';
 
 
@@ -16,7 +17,8 @@ class Form extends React.Component {
       note: '',
       amount: '',
       createdAt: moment(),
-      focused: false
+      focused: false,
+      error: ''
     }
   }
 
@@ -32,23 +34,42 @@ class Form extends React.Component {
 
   onAmountChange = (e) => {
     e.persist();
-    if (e.target.value.match(/^\d*(\.\d{0,2})?$/)) {
+    if (!e.target.value || e.target.value.match(/^\d{1,}(\.\d{0,2})?$/)) {
       this.setState(() => ({ amount: e.target.value }))
     }
   }
 
   onDateChange = (createdAt) => {
-    this.setState(() => ({ createdAt }))
+    if (createdAt) {
+      this.setState(() => ({ createdAt }))   
+    }
   }
 
   onFocusedChange = ({ focused }) => {
     this.setState(() => ({ focused: focused }))
   }
 
+  onSubmit = (e) => {
+    e.preventDefault();
+    
+    if (!this.state.description || !this.state.amount) {
+      this.setState(() => ({ error: 'Please provide description and amount.' }));
+    } else {
+      this.setState(() => ({ error: ''}));
+      this.props.onSubmit({
+        description: this.state.description,
+        amount: parseFloat(this.state.amount, 10) * 100,
+        createdAt: this.state.createdAt.valueOf(),
+        note: this.state.note
+      })
+    }
+  }
+
   render() {
     return (
       <div>
-        <form action="">
+        {this.state.error && <p>{this.state.error}</p>}
+        <form onSubmit={this.onSubmit}>
           <input 
             type="text"
             placeholder="Description"
@@ -68,6 +89,7 @@ class Form extends React.Component {
             focused={this.state.focused}
             onFocusChange={this.onFocusedChange}
             numberOfMonths={1}
+            isOutsideRange={() => false}
           />
           <textarea
             placeholder="Add a note for your expense.(optional)"
