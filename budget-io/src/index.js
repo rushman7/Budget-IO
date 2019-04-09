@@ -4,7 +4,6 @@ import { Provider } from 'react-redux';
 import { BrowserRouter as Router } from "react-router-dom";
 import storeSetup from './store/storeSetup';
 import { addExpense } from './actions/expenses';
-import { setTextFilter } from './actions/filters';
 import getVisibleExpenses from './selectors/expenses';
 import App from './App';
 
@@ -14,8 +13,8 @@ import './index.css';
 const store = storeSetup();
 
 store.dispatch(addExpense({ description: 'Water Bill', amount: 4500 })); 
-store.dispatch(addExpense({ description: 'Gas Bill' }));
-store.dispatch(setTextFilter('water'));
+store.dispatch(addExpense({ description: 'Gas Bill' , amount: 3000}));
+store.dispatch(addExpense({ description: 'Rent' , amount: 300000}));
 
 
 const state = store.getState();
