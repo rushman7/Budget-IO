@@ -1,4 +1,8 @@
 import React from 'react';
+import moment from 'moment';
+
+const date = moment();
+console.log(date);
 
 class Form extends React.Component {
   constructor() {
