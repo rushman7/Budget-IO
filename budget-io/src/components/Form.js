@@ -6,9 +6,6 @@ import 'react-dates/initialize';
 import 'react-dates/lib/css/_datepicker.css';
 
 
-const date = moment();
-console.log(date.format('MMM Do, YYYY'));
-
 class Form extends React.Component {
   constructor() {
     super()
