@@ -3,6 +3,7 @@ import Form from './Form';
 import { connect } from 'react-redux';
 import { addExpense } from '../actions/expenses';
 
+
 const Create = (props) => (
   <div>
     <h2>Create Page</h2>
