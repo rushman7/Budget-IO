@@ -1,5 +1,5 @@
 const express = require('express');
-const port = 8000;
+const port = process.env.PORT || 8000;
 const path = require('path')
 const publicPath = path.join(__dirname, 'build')
 
@@ -10,6 +10,6 @@ server.get('*', (req, res) => {
   res.sendfile(path.join(publicPath, 'index.html'));
 })
 
-server.listen(port, (req, res) => {
+server.listen(port, () => {
   console.log(`server is running on port: ${port}`);
 })
