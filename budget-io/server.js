@@ -1,23 +1,14 @@
 const express = require('express');
-const port = process.env.PORT || 8000;
+const port = 8000;
 const path = require('path')
+const publicPath = path.join(__dirname, 'build')
 
 const server = express();
-server.use(express.static(path.join(__dirname, 'build')));
+server.use(express.static(publicPath));
 
-//production mode
-if(process.env.NODE_ENV === 'production') {
-  server.use(express.static(path.join(__dirname, 'build')));
-  server.get('*', (req, res) => {
-    res.sendfile(path.join(__dirname = 'build/index.html'));
-  })
-}
-
-//build mode
 server.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname+'/public/index.html'));
+  res.sendfile(path.join(publicPath, 'index.html'));
 })
-
 
 server.listen(port, (req, res) => {
   console.log(`server is running on port: ${port}`);
