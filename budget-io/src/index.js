@@ -3,8 +3,6 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router } from "react-router-dom";
 import storeSetup from './store/storeSetup';
-import { addExpense } from './actions/expenses';
-import getVisibleExpenses from './selectors/expenses';
 import App from './App';
 
 import './Styles/css/index.css';
