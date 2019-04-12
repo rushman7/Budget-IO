@@ -5,7 +5,7 @@ import {
   sortByAmount, 
   setStartDate, 
   setEndDate
-} from '../actions/filters';
+} from '../../actions/filters';
 
 test('start date', () => {
   const time = moment()
