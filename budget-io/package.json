@@ -2,7 +2,7 @@
   "name": "budget-io",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://localhost:3000",
+  "proxy": "http://localhost:8000",
   "dependencies": {
     "express": "^4.16.4",
     "moment": "^2.24.0",
@@ -10,6 +10,7 @@
     "react-addons-shallow-compare": "^15.6.2",
     "react-dates": "^20.1.0",
     "react-dom": "^16.8.6",
+    "react-helmet": "^5.2.0",
     "react-redux": "^6.0.1",
     "react-router": "^5.0.0",
     "react-router-dom": "^5.0.0",
@@ -17,10 +18,11 @@
     "redux": "^4.0.1"
   },
   "scripts": {
-    "start": "node server.js",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "server": "node server.js"
   },
   "eslintConfig": {
     "extends": "react-app"

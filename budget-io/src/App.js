@@ -12,6 +12,7 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
+        <h1>Hello</h1>
         <Switch>
           <Route exact path="/" component={Home} />
           <Route path="/create" component={Create} />
