@@ -18,3 +18,34 @@ test('edit expense', () => {
     id: '123abc'
   });
 });
+
+test('add expense with value', () => {
+  const data = {
+    description: 'Rent',
+    amount: 100000,
+    createdAt: 1000,
+    note: 'this is rent'
+  }
+  const action = addExpense(data);
+  expect(action).toEqual({
+    type: 'ADD_EXPENSE',
+    expense: {
+      ...data,
+      id: expect.any(String)
+    }
+  });
+});
+
+test('add expense default', () => {
+  const action = addExpense();
+  expect(action).toEqual({
+    type: 'ADD_EXPENSE',
+    expense: {
+      description: '',
+      note: '',
+      amount: 0,
+      createdAt: 0,      
+      id: expect.any(String)
+    }
+  })
+})
