@@ -7,3 +7,14 @@ test('remove expense', () => {
     id: '123abc'
   });
 });
+
+test('edit expense', () => {
+  const action = editExpense('123abc', { note: 'New note value' });
+  expect(action).toEqual({
+    type: 'EDIT_EXPENSE',
+    updates: {
+      note: 'New note value'
+    },
+    id: '123abc'
+  });
+});
