@@ -7,7 +7,7 @@ const server = express();
 server.use(express.static(publicPath));
 
 server.get('*', (req, res) => {
-  res.sendfile(path.join(publicPath, 'index.html'));
+  res.sendFile(path.join(publicPath, 'index.html'));
 })
 
 server.listen(port, () => {
