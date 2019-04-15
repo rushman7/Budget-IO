@@ -46,7 +46,7 @@ class ExpensesSummary extends React.Component {
     } else {
       this.setState({
         error: '',
-        budget: parseFloat(this.state.budget, 10) * 100,
+        budget: parseFloat(this.state.budget, 10),
       })
     }
   }
