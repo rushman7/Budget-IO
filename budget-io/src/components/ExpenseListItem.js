@@ -15,6 +15,7 @@ const ExpenseListItem = ({ id, dispatch, description, amount, createdAt }) => (
     <button onClick={() => {
       dispatch(removeExpense({ id }))}}>Remove</button>
   </div>
+  
 )
 
 export default connect()(ExpenseListItem);
