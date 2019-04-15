@@ -10,3 +10,8 @@ test('1 expense', () => {
   const res = selectExpensesTotal([expenses[0]]);
   expect(res).toBe(2000);
 })
+
+test('all expense', () => {
+  const res = selectExpensesTotal(expenses);
+  expect(res).toBe(2850);
+})
