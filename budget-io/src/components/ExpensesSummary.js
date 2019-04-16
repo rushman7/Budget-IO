@@ -58,7 +58,7 @@ class ExpensesSummary extends React.Component {
     }
   }
 
-  render () {
+  render() {
     const expenseWord = this.expensesCount === 1 ? 'expense' : 'expenses';
     const formattedExpenesTotal = numeral(this.state.expensesTotal / 100).format('$0,0.00');
     const formattedBudget = numeral(this.state.budget / 100).format('$0,0.00');
@@ -73,9 +73,9 @@ class ExpensesSummary extends React.Component {
             onChange={this.onAmountChange}/>
           <button>Set Budget</button>
         </form>
-        <h1>Your Monthly Budget: {formattedBudget}</h1>
-        <h1>Viewing {this.state.expensesCount} {expenseWord} totalling {formattedExpenesTotal}</h1>
-        <h1>Remainging monthly budget: {remainingBudget}</h1>
+        <h3>Your Monthly Budget: {formattedBudget}</h3>
+        <h3>Viewing {this.state.expensesCount} {expenseWord} totalling {formattedExpenesTotal}</h3>
+        <h3>Remainging monthly budget: {remainingBudget}</h3>
       </div>
     )
   }
