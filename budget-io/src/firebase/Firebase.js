@@ -11,6 +11,15 @@ const config = {
 
 firebase.initializeApp(config);
 
-firebase.database().ref().set({
-  name: 'Arthur Pisakhov'
+const database = firebase.database();
+
+database.ref().set({
+  name: 'Arthur Pisakhov',
+  age: 25,
+  isSingle: true,
+  location: {
+    city: 'Brooklyn',
+    state: 'New York',
+    country: 'USA'
+  }
 });
