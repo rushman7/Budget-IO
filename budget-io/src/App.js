@@ -6,6 +6,7 @@ import Help from './components/Help';
 import Edit from './components/Edit';
 import NotFound from './components/NotFound';
 import Header from './components/Header';
+import './firebase/Firebase';
 
 class App extends Component {
   render() {
