@@ -64,7 +64,6 @@ class ExpensesSummary extends React.Component {
     const formattedBudget = numeral(this.state.budget / 100).format('$0,0.00');
     const remainingBudget = numeral((this.state.budget - this.state.expensesTotal) / 100).format('$0,0.00')
     const normalRemainingBudget = (this.state.budget - this.state.expensesTotal)
-    console.log(normalRemainingBudget);
     return (
       <div>
         {this.state.error && <p>{this.state.error}</p>}
