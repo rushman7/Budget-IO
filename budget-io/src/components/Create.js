@@ -1,7 +1,7 @@
 import React from 'react';
 import Form from './Form';
 import { connect } from 'react-redux';
-import { addExpense } from '../actions/expenses';
+import { startAddExpense } from '../actions/expenses';
 
 
 const Create = (props) => (
@@ -9,7 +9,7 @@ const Create = (props) => (
     <h2>Create Page</h2>
     <Form 
       onSubmit={(expense) => {
-        props.dispatch(addExpense(expense));
+        props.dispatch(startAddExpense(expense));
         props.history.push('/');
       }}
     />

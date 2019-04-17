@@ -5,12 +5,10 @@ import selectExpenses from '../selectors/expenses';
 import selectExpensesTotal from '../selectors/expenses-total';
 
 class ExpensesSummary extends React.Component {
-  constructor({ expensesCount, expensesTotal }) {
-    super();
+  constructor(props) {
+    super(props);
     this.onSubmit = this.onSubmit.bind(this);
     this.state = {
-      expensesCount: expensesCount,
-      expensesTotal: expensesTotal,
       budget: 0 / 100,
       error: ''
     }
@@ -59,11 +57,11 @@ class ExpensesSummary extends React.Component {
   }
 
   render() {
-    const expenseWord = this.expensesCount === 1 ? 'expense' : 'expenses';
-    const formattedExpenesTotal = numeral(this.state.expensesTotal / 100).format('$0,0.00');
+    const expenseWord = this.props.expensesCount === 1 ? 'expense' : 'expenses';
+    const formattedExpenesTotal = numeral(this.props.expensesTotal / 100).format('$0,0.00');
     const formattedBudget = numeral(this.state.budget / 100).format('$0,0.00');
-    const remainingBudget = numeral((this.state.budget - this.state.expensesTotal) / 100).format('$0,0.00')
-    const normalRemainingBudget = (this.state.budget - this.state.expensesTotal)
+    const remainingBudget = numeral((this.state.budget - this.props.expensesTotal) / 100).format('$0,0.00')
+    const normalRemainingBudget = (this.state.budget - this.props.expensesTotal)
     return (
       <div>
         {this.state.error && <p>{this.state.error}</p>}
@@ -75,7 +73,7 @@ class ExpensesSummary extends React.Component {
           <button>Set Budget</button>
         </form>
         <h3>Your Monthly Budget: {formattedBudget}</h3>
-        <h3>Viewing {this.state.expensesCount} {expenseWord} totalling {formattedExpenesTotal}</h3>
+        <h3>Viewing {this.props.expensesCount} {expenseWord} totalling {formattedExpenesTotal}</h3>
         <h3>
           {
             normalRemainingBudget < 0 ? 

@@ -14,35 +14,6 @@ const config = {
 
 firebase.initializeApp(config);
 
-const database = firebase.database();
+const database = firebase.database()
 
-// database.ref('expenses').push({
-//   description: "Rent",
-//   note: 'for rent',
-//   amount: 100000,
-//   createdAt: '01/19'
-// })
-
-
-database.ref('expenses')
-  .on('value', (snapshot) => {
-    const expenses = [];
-
-    snapshot.forEach((snap) => {
-      expenses.push({
-        id: snap.key,
-        ...snap.val()
-      });
-    });
-    console.log('Expenses: ', expenses)
-});
-
-// child_removed
-database.ref('expenses').on('child_removed', (snapshot) => {
-  console.log('Removed: ', snapshot.key)
-})
-
-// child_changed
-database.ref('expenses').on('child_changed', (snapshot) => {
-  console.log('Updated: ', snapshot.key)
-})
+export { firebase, database as default };
