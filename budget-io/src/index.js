@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router } from "react-router-dom";
+import { startSetExpenses } from './actions/expenses';
 import storeSetup from './store/storeSetup';
 import App from './App';
 import './firebase/Firebase';
@@ -19,4 +20,8 @@ const app = (
   </Provider>
 )
 
-ReactDOM.render(app, document.getElementById('root'));
+ReactDOM.render(<p>Loading...</p>, document.getElementById('root'));
+
+store.dispatch(startSetExpenses()).then(() => {
+    ReactDOM.render(app, document.getElementById('root'));
+});
