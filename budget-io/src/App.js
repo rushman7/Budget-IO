@@ -6,6 +6,7 @@ import Edit from './components/Edit';
 import NotFound from './components/NotFound';
 import Login from './components/Login';
 import AuthenticatedRoute from './components/AuthenticatedRoute';
+import NonAuthenticatedRoute from './components/NonAuthenticatedRoute';
 import './firebase/Firebase';
 
 class App extends Component {
@@ -13,7 +14,7 @@ class App extends Component {
     return (
       <div className="App">
         <Switch>
-          <Route exact path ="/" component={Login} />
+          <NonAuthenticatedRoute exact path ="/" component={Login} />
           <AuthenticatedRoute path="/home" component={Home} />
           <AuthenticatedRoute path="/create" component={Create} />
           <AuthenticatedRoute path="/edit/:id" component={Edit} />
