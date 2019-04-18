@@ -6,6 +6,7 @@ import Help from './components/Help';
 import Edit from './components/Edit';
 import NotFound from './components/NotFound';
 import Header from './components/Header';
+import Login from './components/Login';
 import './firebase/Firebase';
 
 class App extends Component {
@@ -14,7 +15,8 @@ class App extends Component {
       <div className="App">
         <Header />
         <Switch>
-          <Route exact path="/" component={Home} />
+          <Route exact path ="/" component={Login} />
+          <Route path="/home" component={Home} />
           <Route path="/create" component={Create} />
           <Route path="/help" component={Help} />
           <Route path="/edit/:id" component={Edit} />
