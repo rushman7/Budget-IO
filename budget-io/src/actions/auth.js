@@ -2,13 +2,13 @@ import { firebase, googleAuthProvider, facebookAuthProvider } from '../firebase/
 
 export const startGoogleLogin = () => {
   return () => {
-    return firebase.auth().signInWithPopup(googleAuthProvider)
+    return firebase.auth().signInWithRedirect(googleAuthProvider)
   };
 };
 
 export const startFacebookLogin = () => {
   return () => {
-    return firebase.auth().signInWithPopup(facebookAuthProvider)
+    return firebase.auth().signInWithRedirect(facebookAuthProvider)
   };
 };
 
@@ -17,3 +17,4 @@ export const startLogout = () => {
     return firebase.auth().signOut();
   }
 }
+
