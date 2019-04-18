@@ -2,24 +2,21 @@ import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import Home from './components/Home';
 import Create from './components/Create';
-import Help from './components/Help';
 import Edit from './components/Edit';
 import NotFound from './components/NotFound';
-import Header from './components/Header';
 import Login from './components/Login';
+import AuthenticatedRoute from './components/AuthenticatedRoute';
 import './firebase/Firebase';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <Header />
         <Switch>
           <Route exact path ="/" component={Login} />
-          <Route path="/home" component={Home} />
-          <Route path="/create" component={Create} />
-          <Route path="/help" component={Help} />
-          <Route path="/edit/:id" component={Edit} />
+          <AuthenticatedRoute path="/home" component={Home} />
+          <AuthenticatedRoute path="/create" component={Create} />
+          <AuthenticatedRoute path="/edit/:id" component={Edit} />
           <Route component={NotFound} />
         </Switch>
       </div>
