@@ -5,8 +5,8 @@ import Create from './components/Create';
 import Edit from './components/Edit';
 import NotFound from './components/NotFound';
 import Login from './components/Login';
-import AuthenticatedRoute from './components/AuthenticatedRoute';
-import NonAuthenticatedRoute from './components/NonAuthenticatedRoute';
+import AuthRoute from './components/AuthRoute';
+import NonAuthRoute from './components/NonAuthRoute';
 import './firebase/Firebase';
 
 class App extends Component {
@@ -14,10 +14,10 @@ class App extends Component {
     return (
       <div className="App">
         <Switch>
-          <NonAuthenticatedRoute exact path ="/" component={Login} />
-          <AuthenticatedRoute path="/home" component={Home} />
-          <AuthenticatedRoute path="/create" component={Create} />
-          <AuthenticatedRoute path="/edit/:id" component={Edit} />
+          <NonAuthRoute exact path ="/" component={Login} />
+          <AuthRoute path="/home" component={Home} />
+          <AuthRoute path="/create" component={Create} />
+          <AuthRoute path="/edit/:id" component={Edit} />
           <Route component={NotFound} />
         </Switch>
       </div>
