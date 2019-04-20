@@ -43,11 +43,9 @@ firebase.auth().onAuthStateChanged((user) => {
         history.push('/home');
       }
     });
-    console.log('Logged in as:', user.uid)
   } else {
     store.dispatch(logout());
     renderApp();
     history.push('/')
-    console.log('Logged Out')
   }
 });
