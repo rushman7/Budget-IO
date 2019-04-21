@@ -1,0 +1,56 @@
+.header_container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: space-between;
+  width: 80%;
+  margin: auto;
+
+  @media @phone {
+    width: 100%;
+  }
+  
+}
+
+.header_btn {
+  color:white;
+  text-decoration: none;
+  margin: 5px;
+  width: 25%;
+  padding: 10px;
+  text-transform: uppercase;
+  background: #2d3436;
+  transition: 1s all ease;
+  margin-bottom: 10px;
+  border: 1px solid white;
+
+  @media @tablet {
+    width: 20%;
+  }
+  
+  @media @phone {
+    width: 30%;
+  }
+  &:hover {
+    background: rgb(93, 228, 171);
+  }
+}
+
+.header_title {
+  flex-grow: 2;
+  width: 100%;
+  font-size: 2.8rem;
+  text-transform: uppercase;
+  color: white;
+  margin-bottom: 5px;
+
+  @media @phone {
+
+  }
+}
+
+.is_active {
+  border: 1px solid blue;
+}

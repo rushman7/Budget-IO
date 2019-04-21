@@ -64,7 +64,7 @@ class Form extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="forms_container">
         {this.state.error && <p>{this.state.error}</p>}
         <form onSubmit={this.onSubmit}>
           <input 
