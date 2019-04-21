@@ -12,9 +12,17 @@
   padding: 15px 0px;
   top: 50%;
   left: 50%;
-  width: 60%;
   transform: translate(-50%,-50%);
   text-align: center;
+  @media @desktop {
+    width: 60%;
+  }
+  @media @tablet {
+    width: 75%
+  }
+  @media @phone {
+    width: 100%
+  }
 }
 
 .img-logo {
@@ -37,11 +45,20 @@
   border: 0;
   display: block;
   margin: 10px auto;
-  width: 65%;
   text-align: center;
   border: 1px solid white;
   padding: 10px 20px;
   border-radius: 6px;
+
+  @media @desktop {
+    width: 55%
+  }
+  @media @tablet {
+    width: 60%
+  }
+  @media @phone {
+    width: 80%
+  }
   &::placeholder {
     color: white;
   }
@@ -57,7 +74,15 @@
   border: 0;
   padding: 10px;
   border-radius: 6px;
-  width: 65%;
+  @media @desktop {
+    width: 55%
+  }
+  @media @tablet {
+    width: 60%
+  }
+  @media @phone {
+    width: 80%
+  }
     &:hover {
     background: #3e658b;
   };

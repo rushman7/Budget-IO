@@ -88,9 +88,23 @@ code {
   padding: 15px 0px;
   top: 50%;
   left: 50%;
-  width: 60%;
   transform: translate(-50%, -50%);
   text-align: center;
+}
+@media (max-width: 3000px) {
+  .login_container {
+    width: 60%;
+  }
+}
+@media (max-width: 900px) {
+  .login_container {
+    width: 75%;
+  }
+}
+@media (max-width: 600px) {
+  .login_container {
+    width: 100%;
+  }
 }
 .img-logo {
   max-width: 120px;
@@ -108,11 +122,25 @@ code {
   border: 0;
   display: block;
   margin: 10px auto;
-  width: 65%;
   text-align: center;
   border: 1px solid white;
   padding: 10px 20px;
   border-radius: 6px;
+}
+@media (max-width: 3000px) {
+  .login_input {
+    width: 55%;
+  }
+}
+@media (max-width: 900px) {
+  .login_input {
+    width: 60%;
+  }
+}
+@media (max-width: 600px) {
+  .login_input {
+    width: 80%;
+  }
 }
 .login_input::placeholder {
   color: white;
@@ -126,7 +154,21 @@ code {
   border: 0;
   padding: 10px;
   border-radius: 6px;
-  width: 65%;
+}
+@media (max-width: 3000px) {
+  .login_button {
+    width: 55%;
+  }
+}
+@media (max-width: 900px) {
+  .login_button {
+    width: 60%;
+  }
+}
+@media (max-width: 600px) {
+  .login_button {
+    width: 80%;
+  }
 }
 .login_button:hover {
   background: #3e658b;
