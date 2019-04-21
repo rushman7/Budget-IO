@@ -30,9 +30,6 @@ body::-webkit-scrollbar-track {
 button {
   cursor: pointer;
 }
-button:hover {
-  transform: scale(1.1);
-}
 button:disabled {
   cursor: default;
 }
@@ -98,7 +95,7 @@ code {
 .img-logo {
   max-width: 120px;
 }
-.login_error {
+.error {
   color: white;
   -webkit-animation: glow 1s ease-in-out infinite alternate;
   -moz-animation: glow 1s ease-in-out infinite alternate;
@@ -131,6 +128,9 @@ code {
   border-radius: 6px;
   width: 65%;
 }
+.login_button:hover {
+  background: #3e658b;
+}
 .fa-facebook-square {
   color: #3b5998;
   cursor: pointer;
@@ -157,4 +157,24 @@ code {
 .fa-github:hover {
   transform: scale(1.3);
   color: #C0E48E;
+}
+.signup_shell {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-image: linear-gradient(45deg, #9fbaa8, #31354c);
+}
+.signup_container {
+  position: absolute;
+  padding: 15px 0px;
+  top: 50%;
+  left: 50%;
+  width: 60%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.signup_title {
+  color: white;
 }

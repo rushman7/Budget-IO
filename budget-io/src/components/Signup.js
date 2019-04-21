@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { startUserCreate } from '../actions/auth';
+import { Link } from 'react-router-dom';
 
 class Signup extends React.Component {
   constructor() {
@@ -34,6 +35,9 @@ class Signup extends React.Component {
     if (this.state.password !== this.state.confirmPassword) {
       const error = 'Passwords did not match.'
       this.setState(() => ({ error }));
+    } if (!this.state.password || this.state.email || this.state.confirmPassword) {
+      const error = 'Please fill out all credentials.'
+      this.setState(() => ({ error }));
     } else {
       this.setState(() => ({ error: '' }));
       this.props.onSubmit(this.state.email, this.state.password)
@@ -43,25 +47,34 @@ class Signup extends React.Component {
 
   render() {
     return (
-      <div>
-        <form onSubmit={this.onSubmit}>
-          {this.state.error && <p>{this.state.error}</p>}
+      <div className="signup_shell">
+        <form 
+          className="signup_container"
+          onSubmit={this.onSubmit}>
+          <h1 className="signup_title">Signup</h1>
+          {this.state.error && <p className="error">{this.state.error}</p>}
           <input 
+            className="login_input"
             type="email"
             placeholder="Email"
             value={this.state.email}
             onChange={this.onEmailChange}/>
           <input 
+            className="login_input"
             type="password"
             placeholder="Password"
             value={this.state.password}
             onChange={this.onPasswordChange}/>
           <input 
+            className="login_input"
             type="password" 
             placeholder="Confirm password"
             value={this.state.confirmPassword}
             onChange={this.onConfirmPasswordChange}/>
-          <button>Signup</button>
+          <button className="login_button">Signup</button>
+          <Link to="/">
+            <button className="login_button">Already a user?</button>
+          </Link>
         </form>
       </div>
     )
