@@ -42,10 +42,12 @@ firebase.auth().onAuthStateChanged((user) => {
       if (history.location.pathname === '/') {
         history.push('/home');
       }
+      console.log('Logged In:', user.uid)
     });
   } else {
     store.dispatch(logout());
     renderApp();
     history.push('/')
+    console.log('Logged Out!')
   }
 });

@@ -32,9 +32,21 @@ export const startGithubLogin = () => {
   };
 };
 
+export const startUserCreate = (email, password) => {
+  return () => {
+    return firebase.auth().createUserWithEmailAndPassword(email, password)
+  };
+};
+
+export const startUserLogin = (email, password) => {
+  return () => {
+    return firebase.auth().signInWithEmailAndPassword(email, password)
+  };
+};
+
 export const startLogout = () => {
   return () => {
     return firebase.auth().signOut();
-  }
-}
+  };
+};
 
