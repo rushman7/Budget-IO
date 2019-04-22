@@ -28,14 +28,20 @@ class ExpenseListFilters extends React.Component {
 
   render() {
     return (
-      <div>
-        <input 
-          type="text" 
-          value={this.props.filters.text} 
-          onChange={(e) => {
-          this.props.dispatch(setTextFilter(e.target.value))
-        }}/>
+      <div className="filters_container">
+        <div className="search_box">
+          <input 
+            className="search_txt"
+            type="text" 
+            value={this.props.filters.text} 
+            placeholder="Type to search"
+            onChange={(e) => {
+            this.props.dispatch(setTextFilter(e.target.value))
+          }}/>
+          <i className="fas fa-search"></i>
+        </div>
         <select 
+          className="search_filters"
           value={this.props.filters.sortBy} 
           onChange={(e) => {
             if (e.target.value === 'date') {

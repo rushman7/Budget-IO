@@ -77,7 +77,7 @@ class ExpensesSummary extends React.Component {
         <h3>
           {
             normalRemainingBudget < 0 ? 
-            <p>You have exceeded your monthly budget: {remainingBudget}</p> : 
+            <p className="error">You have exceeded your monthly budget: {remainingBudget}</p> : 
             <p className="budget_remaining">Remaining monthly budget: {remainingBudget}</p>
           }
         </h3>
