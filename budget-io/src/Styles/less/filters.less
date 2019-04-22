@@ -3,13 +3,34 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
+  margin: auto;
   margin-bottom: 2rem;
+  width: 80%;
+
+  @media @tablet {
+    flex-wrap: wrap;
+  }
 
   @media @phone {
     flex-direction: column;
     width: 100%;
     margin-bottom: 1rem;
+  }
+
+  .DateRangePickerInput {
+    border: 1px solid white;
+    margin-bottom: 1rem;
+
+    .DateRangePickerInput_clearDates_svg {
+      margin-top: -25px;
+    }
+    .DateRangePickerInput_clearDates:hover {
+      background: @green;
+      margin-top: -8px;
+    }
+    .DateInput_input {
+      border-radius: 4rem;
+    }
   }
 }
 
@@ -22,10 +43,11 @@
   margin: auto;
   border: 1px solid white;
   margin-bottom: 1rem;
+  width: 45%;
 
   @media @phone {
     margin-bottom: .5rem;
-    width: 80%;
+    width: 40%;
   }
 
   @media @tablet {
@@ -74,7 +96,7 @@
   text-decoration: none;
   margin: auto;
   height: 3rem;
-  width: 15%;
+  width: 10%;
   padding: 10px;
   background: @grey;
   transition: 1s all ease;
@@ -87,6 +109,7 @@
   }
   
   @media @phone {
+    margin-bottom: .5rem;
     width: 80%;
   }
 }
