@@ -546,7 +546,7 @@ code {
 }
 .item_container {
   border: 1px solid white;
-  width: 14rem;
+  width: 16rem;
   display: flex;
   flex-wrap: wrap;
   margin: auto;
@@ -600,4 +600,52 @@ code {
 }
 .item_remove_btn:hover {
   background: #5de4ab;
+}
+.loading {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+}
+.loading::before {
+  content: "";
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  background: #2d3436;
+  left: 20%;
+  transform: translateX(-50%) rotate(0);
+  border-radius: 20px;
+  animation: loading 4s infinite linear;
+}
+@keyframes loading {
+  from {
+    transform: translate(-50%) rotate(0deg);
+  }
+  50% {
+    left: 80%;
+  }
+  to {
+    transform: translate(-50%) rotate(1440deg);
+  }
+}
+.notfound_page {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+.notfound_txt {
+  color: white;
+  font-weight: 300;
+  font-size: 2.6rem;
 }

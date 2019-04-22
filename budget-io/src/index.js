@@ -32,7 +32,7 @@ const app = (
   </Provider>
 );
 
-ReactDOM.render(<p>Loading...</p>, document.getElementById('root'));
+ReactDOM.render(<p className="loading"></p>, document.getElementById('root'));
 
 firebase.auth().onAuthStateChanged((user) => {
   if (user) {
