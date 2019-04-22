@@ -13,7 +13,9 @@ const Edit = (props) => {
           props.history.push('/');
         }}
       />
-      <button onClick={() => {
+      <button 
+        className="header_btn"
+        onClick={() => {
         props.dispatch(startRemoveExpense(props.expense))
         props.history.push('/');
       }}>Remove</button>

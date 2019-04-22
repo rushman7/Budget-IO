@@ -12,7 +12,8 @@ const ExpenseListItem = ({ id, dispatch, description, amount, createdAt }) => (
     <Link to={`/edit/${id}`}>
       <button>Edit</button>
     </Link>
-    <button onClick={() => {
+    <button
+      onClick={() => {
       dispatch(startRemoveExpense({ id }))}}>Remove</button>
   </div>
   
