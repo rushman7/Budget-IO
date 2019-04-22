@@ -96,7 +96,7 @@ class Form extends React.Component {
           numberOfMonths={1}
           isOutsideRange={() => false}
         />
-          <button className="form_btn">Add Expense</button>
+        <button className="form_btn">Add Expense</button>
         </div>
       </form>
     )

@@ -145,7 +145,7 @@ code {
 }
 .login_button {
   color: white;
-  background: #2c3e50;
+  background: #2d3436;
   display: block;
   margin: 10px auto;
   text-align: center;
@@ -170,7 +170,7 @@ code {
   }
 }
 .login_button:hover {
-  background: #3e658b;
+  background: #5de4ab;
 }
 .fa-facebook-square {
   color: #3b5998;
@@ -380,7 +380,7 @@ code {
   margin: auto;
   border: 1px solid white;
   margin-bottom: 1rem;
-  width: 45%;
+  width: 43%;
 }
 @media (max-width: 600px) {
   .search_box {
@@ -432,7 +432,7 @@ code {
   text-decoration: none;
   margin: auto;
   height: 3rem;
-  width: 10%;
+  width: 12%;
   padding: 10px;
   background: #2d3436;
   transition: 1s all ease;
@@ -530,5 +530,74 @@ code {
   margin-top: 9px;
 }
 .form_btn:hover {
+  background: #5de4ab;
+}
+.expense_container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  max-width: 80%;
+  margin: -3rem auto 3rem auto;
+}
+.expense_txt {
+  color: white;
+  text-transform: uppercase;
+  flex-basis: 100%;
+}
+.item_container {
+  border: 1px solid white;
+  width: 14rem;
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+  overflow: hidden;
+  padding: 1rem;
+  color: white;
+  background: #2d3436;
+  font-weight: 300;
+  flex-direction: row;
+  margin-bottom: 1rem;
+  height: 13rem;
+  justify-content: space-evenly;
+}
+.item_container:hover {
+  transform: scale(1.1);
+}
+.item_description {
+  flex-basis: 100%;
+  font-size: 1.6rem;
+}
+.item_amount {
+  flex-basis: 100%;
+  font-size: 1rem;
+}
+.item_edit_btn {
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+  width: 5rem;
+  height: 2.5rem;
+  text-transform: uppercase;
+  background: #2d3436;
+  transition: 1s all ease;
+  margin-bottom: 10px;
+  border: 1px solid white;
+}
+.item_edit_btn:hover {
+  background: #5de4ab;
+}
+.item_remove_btn {
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+  width: 5rem;
+  height: 2.5rem;
+  text-transform: uppercase;
+  background: #2d3436;
+  transition: 1s all ease;
+  margin-bottom: 10px;
+  border: 1px solid white;
+}
+.item_remove_btn:hover {
   background: #5de4ab;
 }

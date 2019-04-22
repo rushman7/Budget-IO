@@ -72,7 +72,7 @@ class Signup extends React.Component {
             value={this.state.confirmPassword}
             onChange={this.onConfirmPasswordChange}/>
           <button className="login_button">Signup</button>
-          <Link to="/">
+          <Link to="/" style={{ textDecoration: 'none' }}>
             <button className="login_button">Already a user?</button>
           </Link>
         </form>
