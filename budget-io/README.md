@@ -5,6 +5,10 @@ It tracks all your expenses and allows you set a date, amount, note, and name yo
 
 **[Link](https://budget-io.herokuapp.com/)**  
 
+##### TEST-LOGIN:
+- user: test-test@gmail.com
+- pass: password1
+
 ##### Stack:
 - React.js:
     - Based on **reusable components** to build an entire app
