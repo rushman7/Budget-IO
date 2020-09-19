@@ -3,13 +3,16 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { startLogout } from '../actions/auth';
 
-const Header = ({ startLogout,  }) => (
+const Header = ({ startLogout }) => (
   <header>
     <div className="header_container">
-      <h1 className="header_title">Budget IO</h1>
-      <Link to="/home" className="header_btn">Home</Link>
-      <Link to="/create" className="header_btn">Create</Link>
-      <Link to="/" className="header_btn" onClick={startLogout}>Logout</Link>
+      <div className="content-container">
+        <Link to="/home" className="header_title">
+          <h1>Budget IO</h1>
+        </Link>
+        {/* <Link to="/create" className="header_btn">Create</Link> */}
+        <button onClick={startLogout}>Logout</button>
+      </div>
     </div>
   </header>
 )

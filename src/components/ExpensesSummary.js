@@ -58,29 +58,12 @@ class ExpensesSummary extends React.Component {
 
   render() {
     const expenseWord = this.props.expensesCount === 1 ? 'expense' : 'expenses';
-    const formattedExpenesTotal = numeral(this.props.expensesTotal / 100).format('$0,0.00');
-    const formattedBudget = numeral(this.state.budget / 100).format('$0,0.00');
-    const remainingBudget = numeral((this.state.budget - this.props.expensesTotal) / 100).format('$0,0.00')
-    const normalRemainingBudget = (this.state.budget - this.props.expensesTotal)
+    const formattedExpensesTotal = numeral(this.props.expensesTotal / 100).format('$0,0.00');
+
     return (
       <div className="budget_container">
         {this.state.error && <p className="error">{this.state.error}</p>}
-        <form onSubmit={this.onSubmit}>
-          <input 
-            type="text" 
-            name="option" 
-            onChange={this.onAmountChange}
-            className="budget_input"
-            placeholder={formattedBudget}/>
-        </form>
-        <h3 className="budget_total">{this.props.expensesCount} {expenseWord} total: {formattedExpenesTotal}</h3>
-        <h3>
-          {
-            normalRemainingBudget < 0 ? 
-            <p className="error">You have exceeded your monthly budget: {remainingBudget}</p> : 
-            <p className="budget_remaining">Remaining monthly budget: {remainingBudget}</p>
-          }
-        </h3>
+        <h1>Viewing {this.props.expensesCount} {expenseWord} totalling {formattedExpensesTotal}</h1>
       </div>
     )
   }
