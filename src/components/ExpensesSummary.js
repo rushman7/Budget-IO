@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import numeral from 'numeral';
 import selectExpenses from '../selectors/expenses';
 import selectExpensesTotal from '../selectors/expenses-total';
@@ -62,8 +63,13 @@ class ExpensesSummary extends React.Component {
 
     return (
       <div className="budget_container">
-        {this.state.error && <p className="error">{this.state.error}</p>}
-        <h1>Viewing {this.props.expensesCount} {expenseWord} totalling {formattedExpensesTotal}</h1>
+        <div className="content-container">
+          {this.state.error && <p className="error">{this.state.error}</p>}
+          <h1 className="budget_title">Viewing <span>{this.props.expensesCount}</span> {expenseWord} totalling <span>{formattedExpensesTotal}</span></h1>
+          <div className="budget_actions"> 
+            <Link className="in_app_button" to="/create">Add Expense</Link>
+          </div>
+        </div>
       </div>
     )
   }

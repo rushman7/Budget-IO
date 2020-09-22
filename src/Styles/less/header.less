@@ -1,6 +1,22 @@
 .header_container {
-  background: #364051;
-  
+  background: @grey;
+}
+
+.header_content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: @s-size 0;
+
+  .in_app_button {
+    color: white;
+    border: 0;
+    &:hover {
+      background: none;
+      color: @green;
+    }
+  }
+
 }
 
 .header_title {

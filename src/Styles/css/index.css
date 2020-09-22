@@ -34,10 +34,8 @@ button:disabled {
   cursor: default;
 }
 .login_shell {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
+  background: url('/src/assets/image-background.jpg');
+  width: 100vw;
   height: 100vh;
 }
 .login_container {
@@ -48,17 +46,17 @@ button:disabled {
   transform: translate(-50%, -50%);
   text-align: center;
 }
-@media (max-width: 3000px) {
+@media (min-width: 1224px) {
   .login_container {
     width: 60%;
   }
 }
-@media (max-width: 900px) {
+@media (min-width: 768px) {
   .login_container {
     width: 75%;
   }
 }
-@media (max-width: 600px) {
+@media (min-width: 320px) {
   .login_container {
     width: 100%;
   }
@@ -74,63 +72,34 @@ button:disabled {
   text-shadow: 0 0 20px #fff;
 }
 .login_input {
-  color: white;
-  background: none;
+  color: black;
+  background: white;
   border: 0;
   display: block;
   margin: 10px auto;
   text-align: center;
-  border: 1px solid white;
+  border: 1px solid black;
   padding: 10px 20px;
   border-radius: 6px;
   transition: 1s all ease;
 }
-@media (max-width: 3000px) {
+@media (min-width: 1224px) {
   .login_input {
     width: 55%;
   }
 }
-@media (max-width: 900px) {
+@media (min-width: 768px) {
   .login_input {
     width: 60%;
   }
 }
-@media (max-width: 600px) {
+@media (min-width: 320px) {
   .login_input {
     width: 80%;
   }
 }
 .login_input::placeholder {
-  color: white;
-}
-.login_button {
-  color: white;
-  background: #2d3436;
-  display: block;
-  margin: 10px auto;
-  text-align: center;
-  border: 0;
-  padding: 10px;
-  border-radius: 6px;
-  transition: 1s all ease;
-}
-@media (max-width: 3000px) {
-  .login_button {
-    width: 55%;
-  }
-}
-@media (max-width: 900px) {
-  .login_button {
-    width: 60%;
-  }
-}
-@media (max-width: 600px) {
-  .login_button {
-    width: 80%;
-  }
-}
-.login_button:hover {
-  background: #5de4ab;
+  color: black;
 }
 .fa-facebook-square {
   color: #3b5998;
@@ -178,11 +147,58 @@ button:disabled {
   transform: translate(-50%, -50%);
   text-align: center;
 }
+.signup_container .error {
+  color: red;
+}
+@media (min-width: 1224px) {
+  .signup_container {
+    width: 60%;
+  }
+}
+@media (min-width: 768px) {
+  .signup_container {
+    width: 75%;
+  }
+}
+@media (min-width: 320px) {
+  .signup_container {
+    width: 100%;
+  }
+}
 .signup_title {
-  color: white;
+  color: black;
+}
+.budget_container {
+  background: #f7f7f7;
+  padding: 3.2rem 0;
+  margin-bottom: 3.2rem;
+}
+.budget_actions {
+  margin-top: 1.6rem;
+}
+.budget_title {
+  font-weight: 300;
+  margin: 0;
+}
+.budget_title span {
+  font-weight: bold;
 }
 .header_container {
-  background: #364051;
+  background: #2d3436;
+}
+.header_content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.2rem 0;
+}
+.header_content .in_app_button {
+  color: white;
+  border: 0;
+}
+.header_content .in_app_button:hover {
+  background: none;
+  color: #5de4ab;
 }
 .header_title {
   color: white;
@@ -191,120 +207,48 @@ button:disabled {
 .header_title h1 {
   margin: 0;
 }
-.filters_container {
+.input-group {
   display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  margin: auto;
-  margin-bottom: 2rem;
-  width: 80%;
+  flex-direction: column;
+  margin-bottom: 3.2rem;
 }
-@media (max-width: 900px) {
-  .filters_container {
-    flex-wrap: wrap;
+@media (min-width: 1224px) {
+  .input-group {
+    flex-direction: row;
   }
 }
-@media (max-width: 600px) {
-  .filters_container {
-    flex-direction: column;
-    width: 100%;
-    margin-bottom: 1rem;
+.input-group_item {
+  margin-bottom: 1.2rem;
+}
+@media (min-width: 1224px) {
+  .input-group_item {
+    margin: 0 1.2rem 0 0;
   }
 }
-.filters_container .DateRangePickerInput {
-  border: 1px solid white;
-  margin-bottom: 1rem;
-}
-.filters_container .DateRangePickerInput .DateRangePickerInput_clearDates_svg {
-  margin-top: -25px;
-}
-.filters_container .DateRangePickerInput .DateRangePickerInput_clearDates:hover {
-  background: #5de4ab;
-  margin-top: -8px;
-}
-.filters_container .DateRangePickerInput .DateInput_input {
-  border-radius: 4rem;
-}
-.search_box {
-  background: #2d3436;
-  height: 3rem;
-  border-radius: 4rem;
-  padding: 0.5rem;
+.input-group_item .text-input,
+.input-group_item select {
+  border: 1px solid #cacccd;
+  height: 50px;
+  padding: 0.9rem;
+  font-size: 1.2rem;
   font-weight: 300;
-  margin: auto;
-  border: 1px solid white;
-  margin-bottom: 1rem;
-  width: 43%;
 }
-@media (max-width: 600px) {
-  .search_box {
-    margin-bottom: 0.5rem;
-    width: 40%;
-  }
-}
-@media (max-width: 900px) {
-  .search_box {
-    width: 80%;
-  }
-}
-.fa-search {
-  color: #5de4ab;
-  float: right;
-  width: 2rem;
-  height: 2rem;
-  border-radius: 50%;
-  background: #2d3436;
+form {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: 0.4s;
+  flex-direction: column;
 }
-@media (max-width: 600px) {
-  .fa-search {
-    width: 1.5rem;
-  }
+form .error {
+  color: red;
+  margin: 0 0 1.6rem 0;
+  font-style: italic;
 }
-.search_txt {
-  background: none;
-  border: none;
-  float: left;
-  padding: 0 0 0 15px;
-  color: white;
-  font-size: 1rem;
-  transition: 1s;
-  line-height: 2rem;
-  width: 80;
-}
-.search_txt::placeholder {
-  color: white;
-}
-.search_box:hover > .fa-search {
-  background: white;
-}
-.search_filters {
-  color: white;
-  text-decoration: none;
-  margin: auto;
-  height: 3rem;
-  width: 12%;
-  padding: 10px;
-  background: #2d3436;
-  transition: 1s all ease;
-  border: 1px solid white;
-  border-radius: 4rem;
-  margin-bottom: 1rem;
-}
-@media (max-width: 900px) {
-  .search_filters {
-    width: 30%;
-  }
-}
-@media (max-width: 600px) {
-  .search_filters {
-    margin-bottom: 0.5rem;
-    width: 80%;
-  }
+form .text-input {
+  border: 1px solid #cacccd;
+  height: 50px;
+  padding: 0.9rem;
+  font-size: 1.2rem;
+  font-weight: 300;
+  margin-bottom: 1.6rem;
 }
 .forms_container {
   display: flex;
@@ -316,24 +260,18 @@ button:disabled {
 .forms_container > * {
   margin-bottom: 1.2rem;
 }
-@media (max-width: 600px) {
+@media (min-width: 320px) {
   .forms_container {
     max-width: 90%;
   }
 }
-.form_input {
-  border: 1px solid white;
-  height: 2rem;
-  font-size: 1rem;
-  font-weight: 300;
-  padding: 1rem;
-}
 .form_text {
-  border: 1px solid white;
-  height: 4rem;
-  font-size: 1rem;
+  border: 1px solid #cacccd;
+  height: 10rem;
+  padding: 0.9rem;
+  font-size: 1.2rem;
   font-weight: 300;
-  padding: 0.5em;
+  margin-bottom: 1.6rem;
 }
 .CalendarDay__selected {
   background: #2d3436;
@@ -372,20 +310,32 @@ button:disabled {
 }
 .form_btn {
   color: white;
+  background: #2d3436;
   text-decoration: none;
-  height: 3.5em;
-  margin: 5px;
-  width: 80%;
+  height: 3.6em;
+  width: 100%;
   padding: 10px;
   text-transform: uppercase;
-  background: #2d3436;
   transition: 1s all ease;
-  margin-bottom: 10px;
   border: 1px solid white;
-  margin-top: 9px;
 }
 .form_btn:hover {
   background: #5de4ab;
+}
+.form_btn_rmv {
+  color: white;
+  background: #2d3436;
+  text-decoration: none;
+  height: 3.6em;
+  width: 100%;
+  margin-top: 1.2rem;
+  padding: 10px;
+  text-transform: uppercase;
+  transition: 1s all ease;
+  border: 1px solid white;
+}
+.form_btn_rmv:hover {
+  background: red;
 }
 .expense_container {
   display: flex;
@@ -508,4 +458,54 @@ button:disabled {
   margin: 0 auto;
   padding: 0 1.6rem;
   max-width: 80rem;
+}
+.button {
+  color: white;
+  background: #2d3436;
+  display: block;
+  margin: 10px auto;
+  text-align: center;
+  border: 0;
+  padding: 10px;
+  border-radius: 6px;
+  transition: 1s all ease;
+}
+@media (min-width: 1224px) {
+  .button {
+    width: 55%;
+  }
+}
+@media (min-width: 768px) {
+  .button {
+    width: 60%;
+  }
+}
+@media (min-width: 320px) {
+  .button {
+    width: 80%;
+  }
+}
+.button:hover {
+  background: #5de4ab;
+}
+.in_app_button {
+  color: white;
+  background: #2d3436;
+  display: inline-block;
+  font-size: 1.2rem;
+  text-align: center;
+  padding: 1.2rem;
+  border-radius: 6px;
+  text-decoration: none;
+  line-height: 1;
+  transition: 0.5s all ease;
+}
+.in_app_button:hover {
+  background: #5de4ab;
+}
+.box-layout {
+  background: url('../../assets/image-background.jpg');
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
 }

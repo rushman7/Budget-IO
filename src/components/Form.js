@@ -64,12 +64,12 @@ class Form extends React.Component {
 
   render() {
     return (
-      <form onSubmit={this.onSubmit} className="forms_container">
+      <form onSubmit={this.onSubmit}>
         {this.state.error && <p className="error">{this.state.error}</p>}
         <input 
           type="text"
           placeholder="Description"
-          className="form_input"
+          className="text-input"
           autoFocus
           value={this.state.description}
           onChange={this.onDescriptionChange}
@@ -77,7 +77,7 @@ class Form extends React.Component {
         <input 
           type="text"
           placeholder="Amount"
-          className="form_input"
+          className="text-input"
           value={this.state.amount}
           onChange={this.onAmountChange}
         />
@@ -89,14 +89,14 @@ class Form extends React.Component {
         />
         <div className="bottom_container">
           <SingleDatePicker 
-          date={this.state.createdAt}
-          onDateChange={this.onDateChange}
-          focused={this.state.focused}
-          onFocusChange={this.onFocusedChange}
-          numberOfMonths={1}
-          isOutsideRange={() => false}
-        />
-        <button className="form_btn">Add Expense</button>
+            date={this.state.createdAt}
+            onDateChange={this.onDateChange}
+            focused={this.state.focused}
+            onFocusChange={this.onFocusedChange}
+            numberOfMonths={1}
+            isOutsideRange={() => false}
+          />
+          <button className="form_btn">Add Expense</button>
         </div>
       </form>
     )

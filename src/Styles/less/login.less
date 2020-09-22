@@ -1,8 +1,6 @@
 .login_shell {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
+  background: url('/src/assets/image-background.jpg');
+  width: 100vw;
   height: 100vh;
 }
 
@@ -36,16 +34,14 @@
   text-shadow: 0 0 20px #fff,;
 }
 
-
-
 .login_input {
-  color: white;
-  background: none;
+  color: black;
+  background: white;
   border: 0;
   display: block;
   margin: 10px auto;
   text-align: center;
-  border: 1px solid white;
+  border: 1px solid black;
   padding: 10px 20px;
   border-radius: 6px;
   transition: 1s all ease;
@@ -60,34 +56,8 @@
     width: 80%
   }
   &::placeholder {
-    color: white;
+    color: black;
   }
-}
-
-.login_button {
-  color: white;
-  background: @grey;
-  border: 0;
-  display: block;
-  margin: 10px auto;
-  text-align: center;
-  border: 0;
-  padding: 10px;
-  border-radius: 6px;
-  transition: 1s all ease;
-  
-  @media @desktop {
-    width: 55%
-  }
-  @media @tablet {
-    width: 60%
-  }
-  @media @phone {
-    width: 80%
-  }
-    &:hover {
-    background: @green;
-  };
 }
 
 .fa-facebook-square {

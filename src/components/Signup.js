@@ -47,7 +47,7 @@ class Signup extends React.Component {
 
   render() {
     return (
-      <div className="signup_shell">
+      <div className="box-layout">
         <form 
           className="signup_container"
           onSubmit={this.onSubmit}>
@@ -71,9 +71,9 @@ class Signup extends React.Component {
             placeholder="Confirm password"
             value={this.state.confirmPassword}
             onChange={this.onConfirmPasswordChange}/>
-          <button className="login_button">Signup</button>
+          <button className="button">Signup</button>
           <Link to="/" style={{ textDecoration: 'none' }}>
-            <button className="login_button">Already a user?</button>
+            <button className="button">Already a user?</button>
           </Link>
         </form>
       </div>

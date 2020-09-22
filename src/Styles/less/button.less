@@ -1,0 +1,41 @@
+.button {
+  color: white;
+  background: @grey;
+  border: 0;
+  display: block;
+  margin: 10px auto;
+  text-align: center;
+  border: 0;
+  padding: 10px;
+  border-radius: 6px;
+  transition: 1s all ease;
+  
+  @media @desktop {
+    width: 55%
+  }
+  @media @tablet {
+    width: 60%
+  }
+  @media @phone {
+    width: 80%
+  }
+    &:hover {
+    background: @green;
+  };
+}
+
+.in_app_button {
+  color: white;
+  background: @grey;
+  display: inline-block;
+  font-size: @s-size;
+  text-align: center;
+  padding: @s-size;
+  border-radius: 6px;
+  text-decoration: none;
+  line-height: 1;
+  transition: .5s all ease;
+  &:hover {
+    background: @green;
+  }
+};

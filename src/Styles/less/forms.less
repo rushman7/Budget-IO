@@ -1,3 +1,22 @@
+form {
+  display: flex;
+  flex-direction: column;
+  .error {
+    color: red;
+    margin: 0 0 @m-size 0;
+    font-style: italic;
+  }
+
+  .text-input {
+    border: 1px solid #cacccd;
+    height: 50px;
+    padding: .9rem;
+    font-size: @s-size;
+    font-weight: 300;
+    margin-bottom: @m-size;
+  }
+}
+
 .forms_container {
   display: flex;
   flex-direction: column;
@@ -13,20 +32,13 @@
   }
 }
 
-.form_input {
-  border: 1px solid white;
-  height: 2rem;
-  font-size: 1rem;
-  font-weight: 300;
-  padding: 1rem;
-}
-
 .form_text {
-  border: 1px solid white;
-  height: 4rem;
-  font-size: 1rem;
+  border: 1px solid #cacccd;
+  height: 10rem;
+  padding: .9rem;
+  font-size: @s-size;
   font-weight: 300;
-  padding: .5em;
+  margin-bottom: @m-size;
 }
 
 .CalendarDay__selected {
@@ -75,19 +87,33 @@
 
 .form_btn {
   color:white;
+  background: @grey;
   text-decoration: none;
-  height: 3.5em;
-  margin: 5px;
-  width: 80%;
+  height: 3.6em;
+  width: 100%;
   padding: 10px;
   text-transform: uppercase;
-  background: @grey;
   transition: 1s all ease;
-  margin-bottom: 10px;
   border: 1px solid white;
-  margin-top: 9px;
 
   &:hover {
     background: @green;
+  }
+}
+
+.form_btn_rmv {
+  color:white;
+  background: @grey;
+  text-decoration: none;
+  height: 3.6em;
+  width: 100%;
+  margin-top: @s-size;
+  padding: 10px;
+  text-transform: uppercase;
+  transition: 1s all ease;
+  border: 1px solid white;
+
+  &:hover {
+    background: red;
   }
 }

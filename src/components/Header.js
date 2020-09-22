@@ -7,11 +7,12 @@ const Header = ({ startLogout }) => (
   <header>
     <div className="header_container">
       <div className="content-container">
-        <Link to="/home" className="header_title">
-          <h1>Budget IO</h1>
-        </Link>
-        {/* <Link to="/create" className="header_btn">Create</Link> */}
-        <button onClick={startLogout}>Logout</button>
+        <div className="header_content">
+          <Link to="/home" className="header_title">
+            <h1>Budget IO</h1>
+          </Link>
+          <button className="in_app_button" onClick={startLogout}>Logout</button>
+        </div>
       </div>
     </div>
   </header>
