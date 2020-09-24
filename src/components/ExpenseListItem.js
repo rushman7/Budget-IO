@@ -1,22 +1,16 @@
 import React from 'react';
-import { startRemoveExpense } from '../actions/expenses';
-import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import moment from 'moment';
 import numeral from 'numeral';
 
-const ExpenseListItem = ({ id, dispatch, description, amount, createdAt }) => (
-  <div className="item_container">
-    <h3 className="item_description">{description}</h3>
-    <p className="item_amount">{numeral(amount / 100).format('$0,0.00')} - {moment(createdAt).format('MMM Do, YYYY')}</p>
-    <Link to={`/edit/${id}`}>
-      <button className="item_edit_btn">Edit</button>
-    </Link>
-    <button
-      className="item_remove_btn"
-      onClick={() => {
-      dispatch(startRemoveExpense({ id }))}}>Remove</button>
-  </div>
+const ExpenseListItem = ({ id, description, amount, createdAt }) => (
+  <Link className="list-item" to={`/edit/${id}`}>
+    <div>
+      <h3 className="list-item_title">{description}</h3>
+      <span className="list-item_sub-title">{moment(createdAt).format('MMM Do, YYYY')}</span>
+    </div>
+    <h3 className="list-item_data">{numeral(amount / 100).format('$0,0.00')}</h3>
+  </Link>
 )
 
-export default connect()(ExpenseListItem);
+export default ExpenseListItem;

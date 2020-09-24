@@ -4,19 +4,25 @@ import { connect } from 'react-redux';
 import selectExpenses from '../selectors/expenses';
 
 const ExpenseList = (props) => (
-  <div className="expense_container">
-    <h1 className="expense_txt">Expense List</h1>
-    {
-      props.expenses.length === 0 ? (
-        <div className="expense_txt">
-          <span>No Expenses</span>
-        </div>
-      ) : (
-        props.expenses.map((expense) => {
-          return <ExpenseListItem key={expense.id} {...expense} />
-        })
-      )
-    }
+  <div className="content-container">
+    <div className="list-header">
+      <div className="show-for-mobile">Expenses</div>
+      <div className="show-for-desktop">Expense</div>
+      <div className="show-for-desktop">Amount</div>
+    </div>
+    <div className="list-body">
+      {
+        props.expenses.length === 0 ? (
+          <div className="list-item list-item_message">
+            <span>No Expenses</span>
+          </div>
+        ) : (
+          props.expenses.map((expense) => {
+            return <ExpenseListItem key={expense.id} {...expense} />
+          })
+        )
+      }
+    </div>
   </div>
 );
 

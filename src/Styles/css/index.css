@@ -337,74 +337,71 @@ form .text-input {
 .form_btn_rmv:hover {
   background: red;
 }
-.expense_container {
+.list-header {
+  background: #f7f7f7;
+  border: 1px solid #e5e5e5;
+  color: #666;
   display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  max-width: 80%;
-  margin: -3rem auto 3rem auto;
+  justify-content: space-between;
+  padding: 1.2rem 1.6rem;
 }
-.expense_txt {
-  color: white;
-  text-transform: uppercase;
-  flex-basis: 100%;
-}
-.item_container {
-  border: 1px solid white;
-  width: 16rem;
+.list-item {
   display: flex;
-  flex-wrap: wrap;
-  margin: auto;
-  overflow: hidden;
-  padding: 1rem;
-  color: white;
-  background: #2d3436;
-  font-weight: 300;
-  flex-direction: row;
-  margin-bottom: 1rem;
-  height: 13rem;
-  justify-content: space-evenly;
-}
-.item_container:hover {
-  transform: scale(1.1);
-}
-.item_description {
-  flex-basis: 100%;
-  font-size: 1.6rem;
-}
-.item_amount {
-  flex-basis: 100%;
-  font-size: 1rem;
-}
-.item_edit_btn {
-  color: white;
+  flex-direction: column;
+  border: 1px solid #e5e5e5;
+  border-top: none;
+  color: #2d3436;
+  padding: 1.2rem;
   text-decoration: none;
-  padding: 10px;
-  width: 5rem;
-  height: 2.5rem;
-  text-transform: uppercase;
-  background: #2d3436;
-  transition: 1s all ease;
-  margin-bottom: 10px;
-  border: 1px solid white;
+  transition: background 0.3s ease;
 }
-.item_edit_btn:hover {
-  background: #5de4ab;
+.list-item:hover {
+  background: #f7f7f7;
 }
-.item_remove_btn {
-  color: white;
-  text-decoration: none;
-  padding: 10px;
-  width: 5rem;
-  height: 2.5rem;
-  text-transform: uppercase;
-  background: #2d3436;
-  transition: 1s all ease;
-  margin-bottom: 10px;
-  border: 1px solid white;
+@media (min-width: 1224px) {
+  .list-item {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1.6rem;
+    align-items: center;
+  }
 }
-.item_remove_btn:hover {
-  background: #5de4ab;
+.list-item_message {
+  align-items: center;
+  justify-content: center;
+  color: #2d3436;
+  padding: 1.6rem;
+  font-size: 1.8rem;
+}
+.list-item_message:hover {
+  background: none;
+}
+.list-item_title {
+  margin: 0;
+  word-break: break-all;
+  font-size: 1.8rem;
+}
+.list-item_sub-title {
+  color: #2d3436;
+  font-size: 1.4rem;
+}
+.list-item_data {
+  font-size: 1.8rem;
+  margin: 1.2rem 0 0 0;
+}
+@media (min-width: 1224px) {
+  .list-item_data {
+    margin: 0;
+    padding-left: 1.2rem;
+  }
+}
+.list-body {
+  margin-bottom: 1.6rem;
+}
+@media (min-width: 1224px) {
+  .list-body {
+    margin-bottom: 3.2rem;
+  }
 }
 .loading {
   margin: 0;
@@ -508,4 +505,14 @@ form .text-input {
   background-size: cover;
   width: 100vw;
   height: 100vh;
+}
+@media (min-width: 1224px) {
+  .show-for-mobile {
+    display: none;
+  }
+}
+@media (max-width: 1223px) {
+  .show-for-desktop {
+    display: none;
+  }
 }
