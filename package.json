@@ -2,7 +2,9 @@
   "name": "budget-io",
   "version": "0.1.0",
   "engines": {
-    "node": "12.18.4"
+    "node": "12.x",
+    "npm": ">=1.0.0",
+    "yarn": ">=1.0.0"
   },
   "private": true,
   "proxy": "http://localhost:8000",
